@@ -1,6 +1,6 @@
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	*twolstclear(t_twoway_list **twolst)
+void	twolstclear(t_twoway_list **twolst)
 {
 	t_twoway_list	*node;
 

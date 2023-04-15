@@ -6,17 +6,18 @@
 #    By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/15 04:06:21 by kurosawaits       #+#    #+#              #
-#    Updated: 2023/04/16 02:05:25 by kurosawaits      ###   ########.fr        #
+#    Updated: 2023/04/16 03:56:28 by kurosawaits      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	push_swap
 
-SRCS	=	push_swap.c			\
-			twolstadd_back.c	\
-			twolstnew.c			\
-			check_argument.c	\
-			twolstlast.c
+SRCS	=	main.c									\
+			check_argument.c						\
+			./bidirectional_list/create_twolst.c	\
+			./bidirectional_list/twolstadd_back.c	\
+			./bidirectional_list/twolstnew.c		\
+			./bidirectional_list/twolstlast.c
 
 OBJS	=	$(SRCS:.c=.o)
 

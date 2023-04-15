@@ -6,11 +6,11 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 02:48:20 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/16 01:52:16 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/16 03:57:04 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	twolstadd_back(t_twoway_list **head, t_twoway_list *new)
 {

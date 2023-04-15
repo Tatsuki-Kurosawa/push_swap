@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twolstadd_front.c                                  :+:      :+:    :+:   */
+/*   twolstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/15 02:42:13 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/15 02:50:39 by kurosawaits      ###   ########.fr       */
+/*   Created: 2023/04/15 02:37:51 by kurosawaits       #+#    #+#             */
+/*   Updated: 2023/04/16 03:57:23 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	twolstadd_front(t_twoway_list **twolst, t_twoway_list *new)
+t_twoway_list	*twolstnew(int number, int guard_flag)
 {
-	t_twoway_list	*buf;
+	t_twoway_list	*node;
 
-	if (!twolst || !new)
-		return ;
-	buf = *twolst;
-	*twolst = new;
-	new->previous = buf;
-	buf->next = new;
+	node = (t_twoway_list *)malloc(sizeof(t_twoway_list));
+	if (!node)
+		return (NULL);
+	node->next = NULL;
+	node->previous = NULL;
+	node->content = number;
+	node->guard = guard_flag;
+	return (node);
 }

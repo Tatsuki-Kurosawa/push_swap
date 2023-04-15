@@ -6,20 +6,24 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 02:48:20 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/15 02:52:32 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/16 01:52:16 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	twolstadd_back(t_twoway_list **twolst, t_twoway_list *new)
+void	twolstadd_back(t_twoway_list **head, t_twoway_list *new)
 {
-	t_twoway_list	*buf;
+	t_twoway_list	*last_node;
 
-	if (!twolst || !new)
+	if (!head || !new)
 		return ;
-	buf = *twolst;
-	*twolst = new;
-	new->previous = buf;
-	buf->next = new;
+	if (!*head)
+		*head = new;
+	else
+	{
+		last_node = twolstlast(*head);
+		last_node->next = new;
+		new->previous = last_node;
+	}
 }

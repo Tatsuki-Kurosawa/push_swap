@@ -6,7 +6,7 @@
 #    By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/15 04:06:21 by kurosawaits       #+#    #+#              #
-#    Updated: 2023/04/15 04:34:32 by kurosawaits      ###   ########.fr        #
+#    Updated: 2023/04/16 02:05:25 by kurosawaits      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,9 @@ NAME	=	push_swap
 
 SRCS	=	push_swap.c			\
 			twolstadd_back.c	\
-			twolsthead.c		\
-			twolstnew.c
+			twolstnew.c			\
+			check_argument.c	\
+			twolstlast.c
 
 OBJS	=	$(SRCS:.c=.o)
 

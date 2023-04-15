@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 06:42:11 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/12/04 21:59:40 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/15 11:51:53 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ static int	check_overflow(int sign, unsigned long sum, char c)
 // int	main(void) {
 //     int n;
 // 	int	m;
-// 	m = atoi("   +2147483647");
-// 	n = ft_atoi("   +2147483647");
+// 	m = atoi("abc");
+// 	n = ft_atoi("abc");
 //     printf("atoi: %d\n", m);
 //     printf("ft_atoi: %d\n", n);
 //     return 0;

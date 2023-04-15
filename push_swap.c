@@ -6,59 +6,76 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 02:38:33 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/15 04:33:48 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/16 02:18:47 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_twoway_list	**binding(t_twoway_list **twolst, t_twoway_list *node)
+static void	binding_guard(t_twoway_list **head, t_twoway_list *node)
 {
-	t_twoway_list	*head;
 	t_twoway_list	*guard;
+	t_twoway_list	*h_node;
 
 	guard = twolstnew(NULL);
-	head = twolsthead(node);
+	h_node = *head;
 	node->next = guard;
-	guard->next = head;
-	head->previous = guard;
-	*twolst = head;
-	return (twolst);
+	guard->next = h_node;
+	h_node->previous = guard;
+	guard->previous = node;
 }
 
-t_twoway_list	**create_twolst(int quantity, char **numbers)
+static t_twoway_list	*create_twolst(int quantity, char **numbers)
 {
-	t_twoway_list	**new_twolist;
+	t_twoway_list	*head;
 	t_twoway_list	*node;
 	int				i;
-	int				number;
+	// int				j;
 
-	new_twolist = NULL;
-	i = 0;
+	head = NULL;
+	i = 1;
 	while (i < quantity)
 	{
-		number = ft_atoi(numbers[i]);
-		node = twolstnew(&number);
-		twolstadd_back(new_twolist, node);
+		node = twolstnew(numbers[i]);
+		if (!node)
+		{
+			// twolstclear(&head);
+			return (NULL);
+		}
+		twolstadd_back(&head, node);
 		i++;
 	}
-	new_twolist = binding(new_twolist, node);
-	return (new_twolist);
+	binding_guard(&head, node);
+	// j = 0;
+	// while (j < 19)
+	// {
+	// 	printf("head->content: %s\n", head->content);
+	// 	head = head->next;
+	// 	j++;
+	// }
+	return (head);
 }
 
 int	main(int argc, char **argv)
 {
-	t_twoway_list	**twolst;
-	t_twoway_list	*node;
-	int				*num;
+	t_twoway_list	*twolst;
+	// t_twoway_list	*node;
+	// int				*num;
 
-	twolst = create_twolst(argc, argv);
-	node = *twolst;
-	while (node->content)
+	if (check_argument(argc, argv))
 	{
-		num = node->content;
-		printf("%d\n", *num);
-		node = node->next;
+		write(2, "Error\n", ft_strlen("Error\n"));
+		return (1);
 	}
+	printf("check: %d\n", check_argument(argc, argv));
+	twolst = create_twolst(argc, argv);
+	printf("%p\n", twolst);
+	// node = *twolst;
+	// while (node->content)
+	// {
+	// 	num = node->content;
+	// 	printf("%d\n", *num);
+	// 	node = node->next;
+	// }
 	return (0);
 }

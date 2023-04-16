@@ -6,11 +6,11 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 16:26:34 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/16 16:26:35 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/16 21:03:13 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	tohead(t_twoway_list **twolist)
 {

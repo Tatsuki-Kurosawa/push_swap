@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 02:38:33 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/16 15:45:21 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/17 00:23:32 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,20 @@ int	main(int argc, char **argv)
 	// push_swap(argc, &stacka, &stackb);
 	sa(&stacka);
 	printf("\n\nswap(sa)後\n");
+	i = 0;
+	while (i < 7)
+	{
+		num = stacka->content;
+		flag = stacka->guard;
+		if (flag == 1)
+			printf("guard\n");
+		else
+			printf("%d\n", num);
+		stacka = stacka->next;
+		i++;
+	}
+	ra(&stacka);
+	printf("\n\nrotate(ra)後\n");
 	i = 0;
 	while (i < 7)
 	{

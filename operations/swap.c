@@ -6,11 +6,11 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 15:34:12 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/16 16:47:14 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/16 22:01:43 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	swap(t_twoway_list **twolist)
 {
@@ -24,7 +24,6 @@ static void	swap(t_twoway_list **twolist)
 	buf = head->content;
 	head->content = next_node->content;
 	next_node->content = buf;
-	
 }
 
 void	sa(t_twoway_list **twolist)

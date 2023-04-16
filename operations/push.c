@@ -6,11 +6,11 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 16:21:02 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/16 20:44:04 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/16 21:06:35 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static int	take_node(t_twoway_list **list_out)
 {
@@ -45,7 +45,7 @@ static void	put_node(t_twoway_list **list_in, int content)
 	head_in = *list_in;
 	twolstadd_front(list_in, new_node);
 	last_node = twolstlast(head_in);
-	guard_node = last_node->content;
+	guard_node = last_node->next;
 	guard_node->next = head_in;
 	head_in->previous = guard_node;
 }

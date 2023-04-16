@@ -6,7 +6,7 @@
 #    By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/15 04:06:21 by kurosawaits       #+#    #+#              #
-#    Updated: 2023/04/16 16:44:29 by kurosawaits      ###   ########.fr        #
+#    Updated: 2023/04/16 20:59:01 by kurosawaits      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ SRCS	=	main.c									\
 			./bidirectional_list/twolstlast.c		\
 			./operations/tohead.c					\
 			./operations/swap.c						\
-			./operations/push.c
+			./operations/push.c						\
+			./operations/rotate.c
 
 OBJS	=	$(SRCS:.c=.o)
 

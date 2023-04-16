@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 02:26:40 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/16 20:59:49 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/17 00:26:55 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void			pa(t_twoway_list **list_a, t_twoway_list **list_b);
 void			pb(t_twoway_list **list_a, t_twoway_list **list_b);
 void			ra(t_twoway_list **list);
 void			rb(t_twoway_list **list);
+void			rr(t_twoway_list *list_a, t_twoway_list *list_b);
 int				check_argument(int quantity, char **strs);
 int				ft_atoi(const char *str);
 int				ft_isdigit(int c);

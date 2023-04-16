@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 11:30:07 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/15 12:06:12 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/16 09:56:03 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	check_argument(int quantity, char **strs)
 		}
 		i++;
 	}
-	if (quantity == 0)
+	if (quantity == 1)
 		check = 1;
 	return (check);
 }

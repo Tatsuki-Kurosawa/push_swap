@@ -6,7 +6,7 @@
 #    By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/15 04:06:21 by kurosawaits       #+#    #+#              #
-#    Updated: 2023/04/16 03:56:28 by kurosawaits      ###   ########.fr        #
+#    Updated: 2023/04/16 16:44:29 by kurosawaits      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,13 @@ NAME	=	push_swap
 SRCS	=	main.c									\
 			check_argument.c						\
 			./bidirectional_list/create_twolst.c	\
+			./bidirectional_list/twolstadd_front.c	\
 			./bidirectional_list/twolstadd_back.c	\
 			./bidirectional_list/twolstnew.c		\
-			./bidirectional_list/twolstlast.c
+			./bidirectional_list/twolstlast.c		\
+			./operations/tohead.c					\
+			./operations/swap.c						\
+			./operations/push.c
 
 OBJS	=	$(SRCS:.c=.o)
 

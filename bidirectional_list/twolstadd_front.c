@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twolstlast.c                                       :+:      :+:    :+:   */
+/*   twolstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/15 22:46:02 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/16 16:47:02 by kurosawaits      ###   ########.fr       */
+/*   Created: 2023/04/16 16:41:28 by kurosawaits       #+#    #+#             */
+/*   Updated: 2023/04/16 16:41:30 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-t_twoway_list	*twolstlast(t_twoway_list *node)
+void	twolstadd_front(t_twoway_list **head, t_twoway_list *new)
 {
+	t_twoway_list	*pointed_node;
 
-	if (!node)
-		return (NULL);
-	while (node->guard == 0)
-		node = node->next;
-	node = node->previous;
-	return (node);
+	if (!head || !new)
+		return ;
+	if (!*head)
+		*head = new;
+	else
+	{
+		pointed_node = *head;
+		pointed_node->previous = new;
+		new->next = pointed_node;
+		*head = new;
+	}
 }

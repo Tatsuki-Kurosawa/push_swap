@@ -1,3 +1,5 @@
+
+// 全削除
 #include "../push_swap.h"
 
 void	twolstclear(t_twoway_list **twolst)
@@ -11,6 +13,6 @@ void	twolstclear(t_twoway_list **twolst)
 		free();
 		node = *twolst;
 	}
-	
+
 	return (NULL);
 }

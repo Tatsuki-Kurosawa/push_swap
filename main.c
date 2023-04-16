@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 02:38:33 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/17 00:23:32 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/17 00:47:43 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ int	main(int argc, char **argv)
 		stacka = stacka->next;
 		i++;
 	}
-	ra(&stacka);
-	printf("\n\nrotate(ra)後\n");
+	rra(&stacka);
+	printf("\n\nreverse_rotate(rra)後\n");
 	i = 0;
 	while (i < 7)
 	{

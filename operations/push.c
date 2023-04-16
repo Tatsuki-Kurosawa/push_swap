@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 16:21:02 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/16 20:32:46 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/16 20:44:04 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ static int	take_node(t_twoway_list **list_out)
 	guard_node = head_out->previous;
 	next_node->previous = guard_node;
 	guard_node->next = next_node;
-	free(head);
+	free(head_out);
+	*list_out = next_node;
 	return (buf);
 }
 
@@ -44,12 +45,12 @@ static void	put_node(t_twoway_list **list_in, int content)
 	head_in = *list_in;
 	twolstadd_front(list_in, new_node);
 	last_node = twolstlast(head_in);
-	guard_node = last_node.next;
+	guard_node = last_node->content;
 	guard_node->next = head_in;
 	head_in->previous = guard_node;
 }
 
-static void	push(t_twoway_list **list_in, int content)
+static void	push(t_twoway_list **list_in, t_twoway_list **list_out)
 {
 	int	content;
 

@@ -6,7 +6,7 @@
 #    By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/15 04:06:21 by kurosawaits       #+#    #+#              #
-#    Updated: 2023/04/17 00:46:46 by kurosawaits      ###   ########.fr        #
+#    Updated: 2023/04/18 02:02:48 by kurosawaits      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,9 @@ SRCS	=	main.c									\
 			./operations/swap.c						\
 			./operations/push.c						\
 			./operations/rotate.c					\
-			./operations/reverse_rotate.c
+			./operations/reverse_rotate.c			\
+			push_swap.c								\
+			three_arguments.c
 
 OBJS	=	$(SRCS:.c=.o)
 

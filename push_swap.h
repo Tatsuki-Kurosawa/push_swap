@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 02:26:40 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/17 00:50:05 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/18 02:02:24 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct twoway_list
 	int					guard;
 }	t_twoway_list;
 
-// void			push_swap(int quantity, t_twoway_list **sa, t_twoway_list **sb);
+void			push_swap(int quantity, t_twoway_list **sa);
 t_twoway_list	*create_twolst(int quantity, char **numbers);
 t_twoway_list	*twolstnew(int char_num, int guard_flag);
 t_twoway_list	*twolstlast(t_twoway_list *node);
@@ -44,6 +44,7 @@ void			rr(t_twoway_list **list_a, t_twoway_list **list_b);
 void			rra(t_twoway_list **list);
 void			rrb(t_twoway_list **list);
 void			rrr(t_twoway_list **list_a, t_twoway_list **list_b);
+void			three_arguments(t_twoway_list **stack_a);
 int				check_argument(int quantity, char **strs);
 int				ft_atoi(const char *str);
 int				ft_isdigit(int c);

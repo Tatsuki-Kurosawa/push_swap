@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 02:38:33 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/18 02:18:18 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/18 12:14:23 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ int	main(int argc, char **argv)
 	// 	stacka = stacka->next;
 	// 	i++;
 	// }
+	free_stack(&stacka);
 	return (0);
 }

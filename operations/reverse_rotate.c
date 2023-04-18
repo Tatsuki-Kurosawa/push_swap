@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 00:27:41 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/17 00:50:17 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/18 12:16:48 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,18 @@ static void	reverse_rotate(t_twoway_list **list)
 void	rra(t_twoway_list **list)
 {
 	reverse_rotate(list);
+	write(1, "rra\n", ft_strlen("rra\n"));
 }
 
 void	rrb(t_twoway_list **list)
 {
 	reverse_rotate(list);
+	write(1, "rrb\n", ft_strlen("rrb\n"));
 }
 
 void	rrr(t_twoway_list **list_a, t_twoway_list **list_b)
 {
 	reverse_rotate(list_a);
 	reverse_rotate(list_b);
+	write(1, "rrr\n", ft_strlen("rrr\n"));
 }

@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 16:26:34 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/17 01:20:20 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/18 12:03:24 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,7 @@
 
 void	tohead(t_twoway_list **twolist)
 {
-	t_twoway_list	*node;
-
-	node = *twolist;
-	while (node->guard == 0)
-		node = node->next;
-	node = node->next;
-	*twolist = node;
+	while ((*twolist)->guard == 0)
+		(*twolist) = (*twolist)->next;
+	(*twolist) = (*twolist)->next;
 }

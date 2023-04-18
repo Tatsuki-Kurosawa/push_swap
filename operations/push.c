@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 16:21:02 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/16 21:06:35 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/18 12:15:52 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,11 @@ static void	push(t_twoway_list **list_in, t_twoway_list **list_out)
 void	pa(t_twoway_list **list_a, t_twoway_list **list_b)
 {
 	push(list_a, list_b);
+	write(1, "pa\n", ft_strlen("pa\n"));
 }
 
 void	pb(t_twoway_list **list_a, t_twoway_list **list_b)
 {
 	push(list_b, list_a);
+	write(1, "pb\n", ft_strlen("pb\n"));
 }

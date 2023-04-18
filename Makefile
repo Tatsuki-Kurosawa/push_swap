@@ -6,7 +6,7 @@
 #    By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/15 04:06:21 by kurosawaits       #+#    #+#              #
-#    Updated: 2023/04/18 02:02:48 by kurosawaits      ###   ########.fr        #
+#    Updated: 2023/04/18 12:14:30 by kurosawaits      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,13 +25,15 @@ SRCS	=	main.c									\
 			./operations/rotate.c					\
 			./operations/reverse_rotate.c			\
 			push_swap.c								\
-			three_arguments.c
+			three_arguments.c						\
+			free_stack.c
 
 OBJS	=	$(SRCS:.c=.o)
 
 CC	=	gcc
 
-CFLAGS	=	-Wall -Wextra -Werror
+# CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -fsanitize=address
 
 all:	$(NAME)
 

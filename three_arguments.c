@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 01:27:32 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/18 02:17:56 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/18 11:58:22 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,15 @@ static void	sort(t_twoway_list **stack_a, int cont_1, int cont_2, int cont_3)
 
 void	three_arguments(t_twoway_list **stack_a)
 {
-	t_twoway_list	*node;
 	int				content_1;
 	int				content_2;
 	int				content_3;
 
-	node = *stack_a;
-	content_1 = node->content;
-	node = node->next;
-	content_2 = node->content;
-	node = node->next;
-	content_3 = node->content;
+	content_1 = (*stack_a)->content;
+	(*stack_a) = (*stack_a)->next;
+	content_2 = (*stack_a)->content;
+	(*stack_a) = (*stack_a)->next;
+	content_3 = (*stack_a)->content;
 	sort(stack_a, content_1, content_2, content_3);
 	return ;
 }

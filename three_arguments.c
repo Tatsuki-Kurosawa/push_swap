@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 01:27:32 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/18 11:58:22 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/27 17:05:41 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	sort(t_twoway_list **stack_a, int cont_1, int cont_2, int cont_3)
 	if (cont_1 < cont_2)
 	{
 		if (cont_2 < cont_3)
-			return ;
+			tohead(stack_a);
 		else if (cont_1 < cont_3 && cont_3 < cont_2)
 			sort_sa_ra(stack_a);
 		else if (cont_3 < cont_1 && cont_1 < cont_2)
@@ -49,12 +49,14 @@ static void	sort(t_twoway_list **stack_a, int cont_1, int cont_2, int cont_3)
 	return ;
 }
 
+// stack_aのさすノードが番兵の次のノードであることが前提の処理
 void	three_arguments(t_twoway_list **stack_a)
 {
 	int				content_1;
 	int				content_2;
 	int				content_3;
 
+	tohead(stack_a);
 	content_1 = (*stack_a)->content;
 	(*stack_a) = (*stack_a)->next;
 	content_2 = (*stack_a)->content;

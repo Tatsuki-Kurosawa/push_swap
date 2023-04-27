@@ -6,27 +6,37 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 02:41:03 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/16 03:57:00 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/27 16:38:33 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	binding_guard(t_twoway_list **head, t_twoway_list *node)
+static t_twoway_list	*binding_guard(t_twoway_list **head)
 {
-	t_twoway_list	*guard;
-	t_twoway_list	*h_node;
-	int				number;
-	int				guard_flag;
+	t_twoway_list	*guard_node;
+	t_twoway_list	*head_node;
+	t_twoway_list	*tail_node;
 
-	number = 0;
-	guard_flag = 1;
-	guard = twolstnew(number, guard_flag);
-	h_node = *head;
-	node->next = guard;
-	guard->next = h_node;
-	h_node->previous = guard;
-	guard->previous = node;
+	guard_node = twolstnew(0, 1);
+	if (!guard_node)
+	{
+		twolstclear(head);
+		return (NULL);
+	}
+	head_node = *head;
+	tail_node = twolstlast(*head);
+	if (!tail_node)
+	{
+		twolstclear(head);
+		twolstdelone(guard_node);
+		return (NULL);
+	}
+	tail_node->next = guard_node;
+	guard_node->previous = tail_node;
+	guard_node->next = head_node;
+	head_node->previous = guard_node;
+	return (*head);
 }
 
 t_twoway_list	*create_twolst(int quantity, char **numbers)
@@ -44,12 +54,12 @@ t_twoway_list	*create_twolst(int quantity, char **numbers)
 		node = twolstnew(ft_atoi(numbers[i]), guard_flag);
 		if (!node)
 		{
-			// twolstclear(&head);
+			twolstclear(&head);
 			return (NULL);
 		}
 		twolstadd_back(&head, node);
 		i++;
 	}
-	binding_guard(&head, node);
+	head = binding_guard(&head);
 	return (head);
 }

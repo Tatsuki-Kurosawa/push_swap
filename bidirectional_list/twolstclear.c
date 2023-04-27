@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 11:53:43 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/18 11:53:47 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/27 16:17:03 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@ void	twolstclear(t_twoway_list **twolist)
 {
 	t_twoway_list	*node;
 
-	node = *twolist;
-	while (node->previous)
+	if (!twolist)
+		return ;
+	while (*twolist)
 	{
-		*twolist = node->previous;
-		free();
-		node = *twolist;
+		node = (*twolist)->next;
+		twolstdelone(*twolist);
+		*twolist = node;
 	}
 	return ;
 }

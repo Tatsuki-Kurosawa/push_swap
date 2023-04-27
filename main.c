@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 02:38:33 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/18 12:14:23 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/27 17:09:50 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	main(int argc, char **argv)
 {
 	t_twoway_list	*stacka;
+	t_twoway_list	*stackb;
 	int				i;
 	int				num;
 	int				flag;
@@ -22,10 +23,12 @@ int	main(int argc, char **argv)
 	if (check_argument(argc, argv))
 	{
 		write(2, "Error\n", ft_strlen("Error\n"));
-		exit (1);
+		exit(1);
 	}
-	stacka = create_twolst(argc, argv);
-	push_swap(argc, &stacka);
+	stacka = NULL;
+	stackb = NULL;
+	push_swap(argc, argv, &stacka, &stackb);
+	printf("stackb %p\n", stackb);
 	printf("swap(sa)前\n");
 	i = 0;
 	while (i < 5)

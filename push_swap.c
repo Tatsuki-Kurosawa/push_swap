@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 09:39:07 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/18 02:03:55 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/27 17:14:29 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,27 +30,35 @@ static int	compare_two_value(t_twoway_list **stacka)
 	return (check);
 }
 
-void	push_swap(int quantity, t_twoway_list **stack_a)
+void	push_swap(int quantity, char **numbers, \
+					t_twoway_list **stacka, t_twoway_list **stackb)
 {
-	t_twoway_list	*stack_b;
 	int				num_of_int;
 
+	*stacka = create_twolst(quantity, numbers);
+	if (!(*stacka))
+	{
+		write(2, "List Error\n", ft_strlen("List Error\n"));
+		exit(1);
+	}
 	num_of_int = quantity - 1;
 	if (num_of_int == 1)
 		return ;
 	else if (num_of_int == 2)
 	{
-		if (compare_two_value(stack_a) == 1)
-			sa(stack_a);
+		if (compare_two_value(stacka) == 1)
+			sa(stacka);
 	}
 	else if (num_of_int == 3)
 	{
-		stack_b = NULL;
-		printf("stack_b: %p\n", stack_b);
-		three_arguments(stack_a);
+		printf("stack_b: %p\n", stackb);
+		three_arguments(stacka);
 	}
-	else
+	else if (num_of_int == 4)
 	{
+		four_arguments(stacka, stackb);
 	}
 	return ;
 }
+
+// 3,4,5,6の場合は別の関数作ってそっちに任せた方がいいかも

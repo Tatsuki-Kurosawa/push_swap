@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 02:37:51 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/16 03:57:23 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/20 18:40:02 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ t_twoway_list	*twolstnew(int number, int guard_flag)
 	if (!node)
 		return (NULL);
 	node->next = NULL;
-	node->previous = NULL;
 	node->content = number;
 	node->guard = guard_flag;
+	node->previous = NULL;
 	return (node);
 }

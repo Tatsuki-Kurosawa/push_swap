@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 02:48:20 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/16 03:57:04 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/27 16:20:44 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	twolstadd_back(t_twoway_list **head, t_twoway_list *new)
 
 	if (!head || !new)
 		return ;
-	if (!*head)
+	if (!(*head))
 		*head = new;
 	else
 	{

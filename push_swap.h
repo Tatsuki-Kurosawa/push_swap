@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 02:26:40 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/18 12:09:20 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/27 17:11:52 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,19 @@
 typedef struct twoway_list
 {
 	struct twoway_list	*next;
-	struct twoway_list	*previous;
 	int					content;
 	int					guard;
+	struct twoway_list	*previous;
 }	t_twoway_list;
 
-void			push_swap(int quantity, t_twoway_list **sa);
+void			push_swap(int quantity, char **numbers, \
+							t_twoway_list **stacka, t_twoway_list **stackb);
 t_twoway_list	*create_twolst(int quantity, char **numbers);
 t_twoway_list	*twolstnew(int char_num, int guard_flag);
 t_twoway_list	*twolstlast(t_twoway_list *node);
 void			twolstadd_front(t_twoway_list **head, t_twoway_list *new);
 void			twolstadd_back(t_twoway_list **twolst, t_twoway_list *new);
+void			twolstdelone(t_twoway_list *node);
 void			twolstclear(t_twoway_list **twolst);
 void			tohead(t_twoway_list **twolist);
 void			sa(t_twoway_list **twolist);
@@ -45,6 +47,8 @@ void			rra(t_twoway_list **list);
 void			rrb(t_twoway_list **list);
 void			rrr(t_twoway_list **list_a, t_twoway_list **list_b);
 void			three_arguments(t_twoway_list **stack_a);
+void			four_arguments(t_twoway_list **stack_a, \
+								t_twoway_list **stack_b);
 int				check_argument(int quantity, char **strs);
 void			free_stack(t_twoway_list **stack);
 int				ft_atoi(const char *str);

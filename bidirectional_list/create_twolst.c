@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 02:41:03 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/27 16:38:33 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/27 18:54:31 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static t_twoway_list	*binding_guard(t_twoway_list **head)
 	return (*head);
 }
 
-t_twoway_list	*create_twolst(int quantity, char **numbers)
+t_twoway_list	*create_twolst(int num_of_int, char **numbers)
 {
 	t_twoway_list	*head;
 	t_twoway_list	*node;
@@ -48,8 +48,8 @@ t_twoway_list	*create_twolst(int quantity, char **numbers)
 
 	head = NULL;
 	guard_flag = 0;
-	i = 1;
-	while (i < quantity)
+	i = 0;
+	while (i < num_of_int)
 	{
 		node = twolstnew(ft_atoi(numbers[i]), guard_flag);
 		if (!node)
@@ -57,7 +57,7 @@ t_twoway_list	*create_twolst(int quantity, char **numbers)
 			twolstclear(&head);
 			return (NULL);
 		}
-		twolstadd_back(&head, node);
+		twolstadd_back_noguard(&head, node);
 		i++;
 	}
 	head = binding_guard(&head);

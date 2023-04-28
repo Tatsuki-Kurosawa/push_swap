@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twolstadd_front.c                                  :+:      :+:    :+:   */
+/*   twolstadd_front_withguard.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/16 16:41:28 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/16 21:02:53 by kurosawaits      ###   ########.fr       */
+/*   Created: 2023/04/28 16:37:34 by kurosawaits       #+#    #+#             */
+/*   Updated: 2023/04/28 16:45:06 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	twolstadd_front(t_twoway_list **head, t_twoway_list *new)
+void	twolstadd_front_withguard(t_twoway_list **head, t_twoway_list *new)
 {
-	t_twoway_list	*pointed_node;
+	t_twoway_list	*guard_node;
 
 	if (!head || !new)
 		return ;
@@ -22,9 +22,12 @@ void	twolstadd_front(t_twoway_list **head, t_twoway_list *new)
 		*head = new;
 	else
 	{
-		pointed_node = *head;
-		pointed_node->previous = new;
-		new->next = pointed_node;
+		guard_node = (*head)->previous;
+		(*head)->previous = new;
+		guard_node->next = new;
+		new->previous = guard_node;
+		new->next = (*head);
 		*head = new;
 	}
+	return ;
 }

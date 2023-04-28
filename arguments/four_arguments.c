@@ -6,11 +6,11 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 13:32:28 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/27 16:42:15 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/28 16:46:33 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	sort(t_twoway_list **stack_a, t_twoway_list **stack_b, int index)
 {
@@ -59,5 +59,3 @@ void	four_arguments(t_twoway_list **stack_a, t_twoway_list **stack_b)
 	index = find_smallest_node(stack_a);
 	sort(stack_a, stack_b, index);
 }
-
-// stack_bがあること前提でoperation関数は動いている、そのため、syack_bを用意しておく必要がある

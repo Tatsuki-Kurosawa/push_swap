@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 16:21:02 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/27 13:57:17 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/28 16:47:08 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,31 +23,38 @@ static int	take_node(t_twoway_list **list_out)
 	head_out = *list_out;
 	buf = head_out->content;
 	next_node = head_out->next;
-	guard_node = head_out->previous;
-	next_node->previous = guard_node;
-	guard_node->next = next_node;
-	free(head_out);
-	*list_out = next_node;
+	if (next_node->guard == 1)
+		twolstclear_withguard(list_out);
+	else
+	{
+		next_node = head_out->next;
+		guard_node = head_out->previous;
+		next_node->previous = guard_node;
+		guard_node->next = next_node;
+		twolstdelone(head_out);
+		*list_out = next_node;
+	}
 	return (buf);
 }
 
 static void	put_node(t_twoway_list **list_in, int content)
 {
-	t_twoway_list	*head_in;
-	t_twoway_list	*last_node;
-	t_twoway_list	*new_node;
-	t_twoway_list	*guard_node;
-	int				guard;
+	char	*number;
+	int		num_of_int;
+	int		guard_flag;
 
-	guard = 0;
-	new_node = twolstnew(content, guard);
-	tohead(list_in);
-	head_in = *list_in;
-	twolstadd_front(list_in, new_node);
-	last_node = twolstlast(head_in);
-	guard_node = last_node->next;
-	guard_node->next = head_in;
-	head_in->previous = guard_node;
+	if (!(*list_in))
+	{
+		num_of_int = 1;
+		number = ft_itoa(content);
+		*list_in = create_twolst(num_of_int, &number);
+	}
+	else
+	{
+		guard_flag = 0;
+		twolstadd_front_withguard(list_in, twolstnew(content, guard_flag));
+	}
+	return ;
 }
 
 static void	push(t_twoway_list **list_in, t_twoway_list **list_out)

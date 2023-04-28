@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 02:38:33 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/27 17:09:50 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/28 16:46:04 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ int	main(int argc, char **argv)
 	stacka = NULL;
 	stackb = NULL;
 	push_swap(argc, argv, &stacka, &stackb);
-	printf("stackb %p\n", stackb);
-	printf("swap(sa)前\n");
+	printf("push(pb)stackA\n");
+	// pb(&stacka, &stackb);
 	i = 0;
-	while (i < 5)
+	while (i < 14)
 	{
 		num = stacka->content;
 		flag = stacka->guard;
@@ -43,9 +43,22 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	// sa(&stacka);
-	// printf("\n\nswap(sa)後\n");
+	// printf("\n\npush(pb)stackB\n\n");
 	// i = 0;
-	// while (i < 7)
+	// while (i < 4)
+	// {
+	// 	num = stackb->content;
+	// 	flag = stackb->guard;
+	// 	if (flag == 1)
+	// 		printf("guard\n");
+	// 	else
+	// 		printf("%d\n", num);
+	// 	stackb = stackb->next;
+	// 	i++;
+	// }
+	// pa(&stacka, &stackb);
+	// i = 0;
+	// while (i < 4)
 	// {
 	// 	num = stacka->content;
 	// 	flag = stacka->guard;
@@ -54,6 +67,20 @@ int	main(int argc, char **argv)
 	// 	else
 	// 		printf("%d\n", num);
 	// 	stacka = stacka->next;
+	// 	i++;
+	// }
+	// // sa(&stacka);
+	// printf("\n\npush(pa)stackB\n\n");
+	// i = 0;
+	// while (i < 4)
+	// {
+	// 	num = stackb->content;
+	// 	flag = stackb->guard;
+	// 	if (flag == 1)
+	// 		printf("guard\n");
+	// 	else
+	// 		printf("%d\n", num);
+	// 	stackb = stackb->next;
 	// 	i++;
 	// }
 	// rra(&stacka);
@@ -71,5 +98,6 @@ int	main(int argc, char **argv)
 	// 	i++;
 	// }
 	free_stack(&stacka);
+	// free_stack(&stackb);
 	return (0);
 }

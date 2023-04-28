@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twolstdelone.c                                     :+:      :+:    :+:   */
+/*   two_arguments.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 11:53:19 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/28 10:49:07 by kurosawaits      ###   ########.fr       */
+/*   Created: 2023/04/27 17:38:40 by kurosawaits       #+#    #+#             */
+/*   Updated: 2023/04/27 18:00:17 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	twolstdelone(t_twoway_list *node)
+void	two_arguments(t_twoway_list **stack)
 {
-	if (!node)
-		return ;
-	node->previous = NULL;
-	node->next = NULL;
-	free(node);
+	int	content_1;
+	int	content_2;
+
+	tohead(stack);
+	content_1 = (*stack)->content;
+	*stack = (*stack)->next;
+	content_2 = (*stack)->content;
+	if (content_1 > content_2)
+		sa(stack);
+	else
+		tohead(stack);
 	return ;
 }
-
-// nodeをfreeするだけでnodeの持つ情報は全て消えるのか？

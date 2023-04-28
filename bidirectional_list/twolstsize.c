@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twolstadd_back.c                                   :+:      :+:    :+:   */
+/*   twolstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/15 02:48:20 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/27 16:20:44 by kurosawaits      ###   ########.fr       */
+/*   Created: 2023/04/28 10:57:02 by kurosawaits       #+#    #+#             */
+/*   Updated: 2023/04/28 16:28:32 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	twolstadd_back(t_twoway_list **head, t_twoway_list *new)
+int	twolstsize(t_twoway_list *twolist)
 {
-	t_twoway_list	*last_node;
+	int				count;
 
-	if (!head || !new)
-		return ;
-	if (!(*head))
-		*head = new;
-	else
+	count = 0;
+	if (!twolist)
+		return (count);
+	while (twolist->guard == 0)
 	{
-		last_node = twolstlast(*head);
-		last_node->next = new;
-		new->previous = last_node;
+		count++;
+		twolist = twolist->next;
 	}
+	count++;
+	return (count);
 }
+
+// 番兵のーども含めてカウントしている

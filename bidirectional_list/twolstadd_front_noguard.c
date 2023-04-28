@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twolstdelone.c                                     :+:      :+:    :+:   */
+/*   twolstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 11:53:19 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/28 10:49:07 by kurosawaits      ###   ########.fr       */
+/*   Created: 2023/04/16 16:41:28 by kurosawaits       #+#    #+#             */
+/*   Updated: 2023/04/28 16:36:05 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	twolstdelone(t_twoway_list *node)
+void	twolstadd_front_noguard(t_twoway_list **head, t_twoway_list *new)
 {
-	if (!node)
-		return ;
-	node->previous = NULL;
-	node->next = NULL;
-	free(node);
-	return ;
-}
+	t_twoway_list	*pointed_node;
 
-// nodeをfreeするだけでnodeの持つ情報は全て消えるのか？
+	if (!head || !new)
+		return ;
+	if (!*head)
+		*head = new;
+	else
+	{
+		pointed_node = *head;
+		pointed_node->previous = new;
+		new->next = pointed_node;
+		*head = new;
+	}
+}

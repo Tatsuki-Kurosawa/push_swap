@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 11:53:43 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/27 16:17:03 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/28 10:51:46 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,8 @@ void	twolstclear(t_twoway_list **twolist)
 	}
 	return ;
 }
+
+// ここにNULLを指す処理を書いてもあり？？
+// わざわざ別のファイルを作成して書く必要があるか？
+// これまでは番兵が繋がれる手前で使用されていた
+// NULLを指す処理を追加して問題ないか

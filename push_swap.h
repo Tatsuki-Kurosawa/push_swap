@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 02:26:40 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/05/02 23:30:13 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/05/02 23:35:16 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void			five_arguments(t_twoway_list **stack_a, \
 void			six_arguments(t_twoway_list **stack_a, t_twoway_list **stack_b);
 int				check_argument(int quantity, char **strs);
 void			free_stack(t_twoway_list **stack);
-void			sort(t_twoway_list **stacka, t_twoway_list **stackb);
+void			number_sort(t_twoway_list **stacka, t_twoway_list **stackb);
 int				ft_atoi(const char *str);
 char			*ft_itoa(int n);
 int				ft_isdigit(int c);

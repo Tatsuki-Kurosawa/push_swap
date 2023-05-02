@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 16:21:02 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/28 16:47:08 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/05/03 03:10:12 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ static int	take_node(t_twoway_list **list_out)
 	head_out = *list_out;
 	buf = head_out->content;
 	next_node = head_out->next;
+		// twolstclear_withguard(list_out);
 	if (next_node->guard == 1)
-		twolstclear_withguard(list_out);
+		printf("Last One!\n");
 	else
 	{
 		next_node = head_out->next;

@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 09:39:07 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/05/02 23:32:12 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/05/02 23:54:37 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,10 @@ void	push_swap(int quantity, char **numbers, \
 	}
 	if (num_of_int == 2)
 		two_arguments(stacka);
+	else if (num_of_int == 3)
+		three_arguments(stacka);
 	else
-		sort(stacka, stackb);
+		number_sort(stacka, stackb);
 	return ;
 }
 

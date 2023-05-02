@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   number_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:29:16 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/05/02 23:29:37 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/05/03 03:08:59 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ static void	return_number(t_twoway_list **stacka, t_twoway_list **stackb)
 	int	len;
 	int	i;
 
-	len = twolstsize(stackb);
+	len = twolstsize(*stackb);
 	i = 0;
-	while (i <= len)
+	while (i + 1 < len)
 	{
 		pa(stacka, stackb);
 		i++;
@@ -57,9 +57,9 @@ static void	judge(int index, int num_of_node, t_twoway_list **stacka, \
 	difference = num_of_node - index;
 	if (index == 1)
 		sa(stacka);
-	else if (index / 2 >= 2)
+	else if (num_of_node / 2 >= index)
 	{
-		while (i <= difference)
+		while (i < index)
 		{
 			ra(stacka);
 			i++;
@@ -77,19 +77,16 @@ static void	judge(int index, int num_of_node, t_twoway_list **stacka, \
 	return ;
 }
 
-// 中で2この場合を作るか、それともこの関数を使うのが3以上のものだけに絞るかどちらか
-void	sort(t_twoway_list **stacka, t_twoway_list **stackb)
+void	number_sort(t_twoway_list **stacka, t_twoway_list **stackb)
 {
 	int	num_of_node;
-	int	i;
 	int	j;
 
-	i = 1;
-	num_of_node = twolstsize(*stacka);
 	while (1)
 	{
 		tohead(stacka);
-		if (twolstsize(stacka) == 3)
+		num_of_node = twolstsize(*stacka) - 1;
+		if (num_of_node == 3)
 		{
 			three_arguments(stacka);
 			break ;

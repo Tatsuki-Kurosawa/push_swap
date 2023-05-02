@@ -6,7 +6,7 @@
 #    By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/15 04:06:21 by kurosawaits       #+#    #+#              #
-#    Updated: 2023/05/02 23:30:23 by kurosawaits      ###   ########.fr        #
+#    Updated: 2023/05/02 23:35:20 by kurosawaits      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ SRCS	=	main.c												\
 			./arguments/five_arguments.c						\
 			./arguments/six_arguments.c							\
 			free_stack.c										\
-			sort.c
+			number_sort.c
 
 OBJS	=	$(SRCS:.c=.o)
 

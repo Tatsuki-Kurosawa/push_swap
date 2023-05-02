@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 10:51:13 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/28 16:32:57 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/05/03 01:24:57 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,20 @@ void	twolstclear_withguard(t_twoway_list **twolist)
 {
 	t_twoway_list	*next_node;
 	t_twoway_list	*guard_node;
-	int				num_of_node;
-	int				i;
 
 	if (!twolist)
 		return ;
-	i = 0;
 	tohead(twolist);
-	num_of_node = twolstsize(*twolist);
 	guard_node = (*twolist)->previous;
-	while (i + 1 < num_of_node)
+	while ((*twolist)->guard == 0)
 	{
 		next_node = (*twolist)->next;
 		twolstdelone(*twolist);
 		*twolist = next_node;
+		if (next_node == guard_node)
+			break ;
 		(*twolist)->previous = guard_node;
 		guard_node->next = *twolist;
-		i++;
 	}
 	twolstdelone(*twolist);
 	*twolist = NULL;

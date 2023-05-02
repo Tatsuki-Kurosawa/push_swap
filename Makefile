@@ -6,7 +6,7 @@
 #    By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/15 04:06:21 by kurosawaits       #+#    #+#              #
-#    Updated: 2023/04/28 16:39:33 by kurosawaits      ###   ########.fr        #
+#    Updated: 2023/05/02 23:30:23 by kurosawaits      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS	=	main.c												\
 			./bidirectional_list/twolstnew.c					\
 			./bidirectional_list/twolstlast.c					\
 			./bidirectional_list/twolstdelone.c					\
-			./bidirectional_list/twolstclear.c					\
+			./bidirectional_list/twolstclear_noguard.c			\
 			./bidirectional_list/twolstclear_withguard.c		\
 			./bidirectional_list/twolstsize.c					\
 			./operations/tohead.c								\
@@ -34,7 +34,10 @@ SRCS	=	main.c												\
 			./arguments/two_arguments.c							\
 			./arguments/three_arguments.c						\
 			./arguments/four_arguments.c						\
-			free_stack.c
+			./arguments/five_arguments.c						\
+			./arguments/six_arguments.c							\
+			free_stack.c										\
+			sort.c
 
 OBJS	=	$(SRCS:.c=.o)
 

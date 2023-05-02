@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 09:39:07 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/28 01:38:14 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/05/02 23:32:12 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,20 @@ void	push_swap(int quantity, char **numbers, \
 		write(2, "List Error\n", ft_strlen("List Error\n"));
 		exit(1);
 	}
-	printf("stackb: %p\n", stackb);
 	if (num_of_int == 2)
 		two_arguments(stacka);
-	else if (num_of_int == 3)
-		three_arguments(stacka);
-	else if (num_of_int == 4)
-		four_arguments(stacka, stackb);
+	else
+		sort(stacka, stackb);
 	return ;
 }
 
+// else if (num_of_int == 3)
+// 	three_arguments(stacka);
+// else if (num_of_int == 4)
+// 	four_arguments(stacka, stackb);
+// else if (num_of_int == 5)
+// 	five_arguments(stacka, stackb);
+// else if (num_of_int == 6)
+// 	six_arguments(stacka, stackb);
 // 3,4,5,6の場合は別の関数作ってそっちに任せた方がいいかも
 // ポインタのアドレスを渡している

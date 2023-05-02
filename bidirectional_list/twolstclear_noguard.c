@@ -6,13 +6,13 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 11:53:43 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/28 10:51:46 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/28 21:40:18 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	twolstclear(t_twoway_list **twolist)
+void	twolstclear_noguard(t_twoway_list **twolist)
 {
 	t_twoway_list	*node;
 

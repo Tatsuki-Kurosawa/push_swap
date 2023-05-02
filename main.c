@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 02:38:33 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/28 16:46:04 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/04/28 21:42:19 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 	stacka = NULL;
 	stackb = NULL;
 	push_swap(argc, argv, &stacka, &stackb);
-	printf("push(pb)stackA\n");
+	// printf("push(pb)stackA\n");
 	// pb(&stacka, &stackb);
 	i = 0;
 	while (i < 14)

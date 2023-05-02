@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 02:26:40 by kurosawaits       #+#    #+#             */
-/*   Updated: 2023/04/28 16:36:40 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2023/05/02 23:30:13 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void			twolstadd_back_noguard(t_twoway_list **twolst, \
 void			twolstadd_back_withguard(t_twoway_list **head, \
 										t_twoway_list *new);
 void			twolstdelone(t_twoway_list *node);
-void			twolstclear(t_twoway_list **twolst);
+void			twolstclear_noguard(t_twoway_list **twolst);
 void			twolstclear_withguard(t_twoway_list **twolist);
 int				twolstsize(t_twoway_list *twolist);
 void			tohead(t_twoway_list **twolist);
@@ -58,8 +58,12 @@ void			two_arguments(t_twoway_list **stack);
 void			three_arguments(t_twoway_list **stack_a);
 void			four_arguments(t_twoway_list **stack_a, \
 								t_twoway_list **stack_b);
+void			five_arguments(t_twoway_list **stack_a, \
+								t_twoway_list **stack_b);
+void			six_arguments(t_twoway_list **stack_a, t_twoway_list **stack_b);
 int				check_argument(int quantity, char **strs);
 void			free_stack(t_twoway_list **stack);
+void			sort(t_twoway_list **stacka, t_twoway_list **stackb);
 int				ft_atoi(const char *str);
 char			*ft_itoa(int n);
 int				ft_isdigit(int c);
